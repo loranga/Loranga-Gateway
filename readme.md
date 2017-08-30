@@ -15,17 +15,14 @@ bla bla
 bla bla
 
 
-## How to use
+# How to use
 
 bla bla
 
-# Make a PPP internet connection with LORANGA on Raspberry Pi
 
-# test
+## 2G Module Set-up
 
-### Prueba 2
-
-## Start 2G module on your loranga board
+### A. Start 2G module on your loranga board
 The 2G module on Loranga needs a wake-up signal from the Rpi.
 
 The pin used for this is GPIO 22 (Physical pin 15).
@@ -42,7 +39,7 @@ You need to send a High level for 2 seconds over GPIO 22 to wake-up or sleep the
 3. This script can be added later on /etc/rc.local to auto wake-up at boot.
 
 
-## Set-up the ppp connection
+### B. Set-up the ppp connection
 LORANGA use Uart connection on Raspberry Pi. You can use following instructions to make it work.
 
 1. Firstly, Connect your Raspberry Pi to internet and run `sudo apt-get update` to update your Raspberry Pi
@@ -82,3 +79,11 @@ LORANGA use Uart connection on Raspberry Pi. You can use following instructions 
             RX bytes:3065 (2.9 KiB)  TX bytes:2657 (2.5 KiB)
 
   ```
+
+
+## LoRa Module Set-up
+
+### A Enable serial
+
+
+### WAZIUP Code
