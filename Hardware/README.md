@@ -1,2 +1,4 @@
-# Loranga
-The IoT gateway for Raspberry pi
+### Hardware
+
+
+Here you can find the Hardware files for Loranga Board
