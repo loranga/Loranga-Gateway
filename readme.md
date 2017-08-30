@@ -17,7 +17,7 @@ bla bla
 
 ## How to use
 
-bla bla 
+bla bla
 
 # Make a PPP internet connection with LORANGA on Raspberry Pi
 
