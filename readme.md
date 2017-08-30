@@ -10,7 +10,6 @@ It is designed for the Raspberry Pi Zero (other RPi boards with 40-pin header wi
 
 bla bla
 
-
 ## Features
 
 bla bla
@@ -18,6 +17,7 @@ bla bla
 
 ## How to use
 
+bla bla 
 
 # Make a PPP internet connection with LORANGA on Raspberry Pi
 
