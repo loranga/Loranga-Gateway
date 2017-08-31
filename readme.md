@@ -10,6 +10,8 @@ It is designed for the Raspberry Pi Zero (other RPi boards with 40-pin header wi
 Loranga combines the power of a 2G network with the great LoRa network.
 It uses the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G Module
 
+![Image of loranga](https://github.com/loranga/Loranga-Gateway/blob/Readme-edit/Docs/Photos/PARTES%2BTECNICAS%2BLORANGA-01.png)
+
 
 ## Features
 
@@ -21,7 +23,7 @@ It uses the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G Module
 
 - Loranga has 2 Built-in status LEDs for 2G module and also 1 connected to a GPIO for any use.
 
--  
+-
 
 
 
@@ -44,7 +46,6 @@ The 2G module on Loranga needs a wake-up signal from the Rpi.
 The pin used for this is GPIO 22 (Physical pin 15).
 
 You need to send a High level for 2 seconds over GPIO 22 to wake-up or sleep the module.
-
 
 1. Download the wake-2G python script
 - `wget https://raw.githubusercontent.com/edu986/test_ppp/edit_readme/wake-2G.py`
