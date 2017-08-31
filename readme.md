@@ -23,9 +23,6 @@ It uses the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G Module
 
 - Loranga has 2 Built-in status LEDs for 2G module and also 1 connected to a GPIO for any use.
 
--
-
-
 
 # How to use
 
@@ -99,8 +96,6 @@ LORANGA use Uart connection on Raspberry Pi. You can use following instructions 
 
 
 ## LoRa Module Set-up
-
-### A Enable serial
 
 
 ### WAZIUP Code
