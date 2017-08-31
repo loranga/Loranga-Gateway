@@ -1,18 +1,28 @@
 # Loranga IoT HAT
 
-Loranga is a IoT HAT transforming your Raspberry Pi into a gateway for IoT,
-It uses LoRa and 2G radio to connect all your sensors to the world easyly
+Loranga is a Raspberry Pi compatible board designed to make it easier to set up an internet connected LoRa IoT network anywhere a cell phone signal is available. The LoRa Technology enables long range, low power and low cost communication between devices.
 
 It is designed for the Raspberry Pi Zero (other RPi boards with 40-pin header will also work).
 
 
 ## Functional diagram
 
-bla bla
+Loranga combines the power of a 2G network with the great LoRa network.
+It uses the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G Module
+
 
 ## Features
 
-bla bla
+- Fully compatible with 40-pin GPIO connector of Raspberry pi
+
+- Contains it's own micro USB connector to power Loranga itself and the Raspberry pi
+
+- Each wireless module has it's own u.FL antenna connector.
+
+- Loranga has 2 Built-in status LEDs for 2G module and also 1 connected to a GPIO for any use.
+
+-  
+
 
 
 # How to use
