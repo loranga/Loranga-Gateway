@@ -27,7 +27,13 @@ It uses the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G Module
 
 # How to use
 
-bla bla
+In order to use Loranga with your Rasperry pi, you need to set-up the 2G module and the LoRa Transceiver.
+
+1. Insert a SIM card on the SIM holder under Loranga board.
+
+2. Connect your antennas to the u.FL connectors.
+
+3. Plug a 5V 2A power adapter to the micro USB conector on Loranga.
 
 
 ## 2G Module Set-up
