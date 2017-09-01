@@ -97,5 +97,10 @@ LORANGA use Uart connection on Raspberry Pi. You can use following instructions 
 
 ## LoRa Module Set-up
 
+For LoRa transceiver we recommend to use the Low-cost LoRa gateway code from our friend Congduc Pham
 
-### WAZIUP Code
+https://github.com/CongducPham/LowCostLoRaGw
+
+Please follow all the instructions he provide on his github repository,
+
+The easiest way to set-up your gateway is to Download the SD image they provide.
