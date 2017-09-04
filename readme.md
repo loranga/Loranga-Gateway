@@ -2,47 +2,46 @@
 
 Loranga is a Raspberry Pi compatible board designed to make it easier to set up an internet connected LoRa IoT network anywhere a cell phone signal is available. The LoRa Technology enables long range, low power and low cost communication between devices.
 
-It is designed for the Raspberry Pi Zero (other RPi boards with 40-pin header will also work).
-
+All Raspberry Pi boards with a 40-pin header works great with Loranga. With a formfactor of the RPI0 complexity is kept at a minimum in order to keep the BOM short and cost as low as possible while maintaining flexibility. 
 
 ## Functional diagram
 
-Loranga combines the power of a 2G network with the great LoRa network.
-It uses the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G Module
+Loranga combines the power of the widely deployed 2G cellular network with the great LoRa network features.
+Our first edition is equiped with the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G module. However, other alternatives are available to work with your region's license free frequency bands (typically 433MHz and 850MHz-1GHz). 
 
 ![Image of loranga](https://github.com/loranga/Loranga-Gateway/blob/Readme-edit/Docs/Photos/PARTES%2BTECNICAS%2BLORANGA-01.png)
 
 
 ## Features
 
-- Fully compatible with 40-pin GPIO connector of Raspberry pi
+- Fully compatible with the 40-pin GPIO connector on Raspberry Pi.
 
-- Contains it's own micro USB connector to power Loranga itself and the Raspberry pi
+- Contains its own micro USB connector to power the Loranga as well as the Raspberry Pi.
 
-- Each wireless module has it's own u.FL antenna connector.
+- Each wireless module has its own u.FL antenna connector.
 
-- Loranga has 2 Built-in status LEDs for 2G module and also 1 connected to a GPIO for any use.
+- Loranga has two built-in status LEDs for the 2G module and one connected to a GPIO pin for customizable implementation.
 
 
 # How to use
 
-In order to use Loranga with your Rasperry pi, you need to set-up the 2G module and the LoRa Transceiver.
+In order to use Loranga with your Rasperry Pi, you need to set up the 2G module and the LoRa Transceiver.
 
-1. Insert a SIM card on the SIM holder under Loranga board.
+1. Insert a nano SIM card in the SIM holder on the backside of the Loranga board.
 
 2. Connect your antennas to the u.FL connectors.
 
-3. Plug a 5V 2A power adapter to the micro USB conector on Loranga.
+3. Plug a 5V, 2A power adapter to the micro USB conector on Loranga (You don't need to connect your regular Pi power).
 
 
-## 2G Module Set-up
+## 2G module set-up
 
-### A. Start 2G module on your loranga board
-The 2G module on Loranga needs a wake-up signal from the Rpi.
+### A. Start the 2G module on your Loranga board
+The 2G module on Loranga needs a wake-up signal from the RPi.
 
-The pin used for this is GPIO 22 (Physical pin 15).
+The pin used for this is GPIO 22 (physical pin 15).
 
-You need to send a High level for 2 seconds over GPIO 22 to wake-up or sleep the module.
+You need to send a high level for 2 seconds over GPIO 22 to wake it up (same procedure to sleep it)
 
 1. Download the wake-2G python script
 - `wget https://raw.githubusercontent.com/edu986/test_ppp/edit_readme/wake-2G.py`
@@ -53,13 +52,13 @@ You need to send a High level for 2 seconds over GPIO 22 to wake-up or sleep the
 3. This script can be added later on /etc/rc.local to auto wake-up at boot.
 
 
-### B. Set-up the ppp connection
-LORANGA use Uart connection on Raspberry Pi. You can use following instructions to make it work.
+### B. Set up the ppp connection
+Loranga uses the UART pins on the RPi GPIO to interface with the 2G modem. Follow the instructions below to connect to the cellular network of your choice.
 
-1. Firstly, Connect your Raspberry Pi to internet and run `sudo apt-get update` to update your Raspberry Pi
+1. Firstly, connect your Raspberry Pi to the internet using wifi or ethernet and run `sudo apt-get update` to update your Raspberry Pi
 
-2. We should stop getty service on Raspbian.
-  1. For non Raspberry Pi 3 machines, remember it’s /dev/ttyAMA0 that is linked to the getty (console) service. So you need to perform this command from a terminal window:
+2. Stop the getty service on Raspbian.
+  1. For non-Raspberry Pi 3 machines, remember it’s /dev/ttyAMA0 that is linked to the getty (console) service. So you need to perform this command from the terminal:
     - `sudo systemctl stop serial-getty@ttyAMA0.service`
     - `sudo systemctl disable serial-getty@ttyAMA0.service`
 
@@ -67,22 +66,23 @@ LORANGA use Uart connection on Raspberry Pi. You can use following instructions 
     - `sudo systemctl stop serial-getty@ttyS0.service`
     - `sudo systemctl disable serial-getty@ttyS0.service`
 
-  3. You also need to remove the console from the cmdline.txt. If you edit this with:
+  3. Remove the console from the cmdline.txt: 
     - `sudo nano /boot/cmdline.txt`
       ```
       dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
       ```
-      remove the line: console=serial0,115200 and save and reboot for changes to take effect.
-  4. You also need to enable uart with edit /boot/config.txt file
-    - `sudo nano /boot/config.txt` and add `enable_uart=1` to bottom of file then save and reboot for changes to take effect.
+      , remove the line: `console=serial0,115200` and save.
+      
+  4. Enable UART by editing the /boot/config.txt file
+    - `sudo nano /boot/config.txt` and add `enable_uart=1` to the bottom of file. Then save and reboot for changes to take effect.
 
-3. Download ppp-creator.sh script and run. Script will install ppp and creates config files.
+3. Download ppp-creator.sh script and run. This script will install ppp and create the ppp config files.
   - `wget https://raw.githubusercontent.com/edu986/test_ppp/master/ppp-creator.sh`
-  - `chmod +x ./ppp-creator.sh`
-  - `sudo ./ppp-creator.sh INTERNET ttyAMA0` # Rpi3 > ttyS0 , others ttyAMA0 # INTERNET is APN, check your cellular
+  - `chmod +x ppp-creator.sh`
+  - `sudo ./ppp-creator.sh INTERNET ttyAMA0` # RPi3 needs ttyS0 instead of ttyAMA0 # Replace INTERNET with your cellular network provider's APN (example: web.entelpcs.cl).
 
 4. Run `sudo pppd call gprs`
-5. run `ifconfig ppp0` at terminal window to see following outputs and see your ip<br/>
+5. run `ifconfig ppp0` in the terminal to see the following output and check your designated IP<br/>
   ```
   ppp0      Link encap:Point-to-Point Protocol
             inet addr:XX.XX.XXX.XXX  P-t-P:XX.XX.XX.XX  Mask:255.255.255.255
@@ -97,10 +97,31 @@ LORANGA use Uart connection on Raspberry Pi. You can use following instructions 
 
 ## LoRa Module Set-up
 
-For LoRa transceiver we recommend to use the Low-cost LoRa gateway code from our friend Congduc Pham
+We at La Fabrica Alegre recommend setting up your gateway with the LowCostLoRaGateway https://github.com/CongducPham/LowCostLoRaGw. 
+This gateway software is plug-and-play with Loranga and extremely well documented. It is therefor recommended to dig into the tutorial material and FAQ to learn about all the possibilities. You can also simply download a complete Raspbian image with the gateway sotware already installed: http://cpham.perso.univ-pau.fr/LORA/WAZIUP/raspberrypi-jessie-WAZIUP-demo.dmg.zip
 
-https://github.com/CongducPham/LowCostLoRaGw
+LowCostLoRaGateway Tutorial materials by Congduc Pham:
 
-Please follow all the instructions he provide on his github repository,
+2 tutorial videos on YouTube: video of all the steps to build the whole framework from scratch:
 
-The easiest way to set-up your gateway is to Download the SD image they provide.
+Build your low-cost, long-range IoT device with WAZIUP  , https://www.youtube.com/watch?v=YsKbJeeav_M
+Build your low-cost LoRa gateway with WAZIUP, https://www.youtube.com/watch?v=peHkDhiH3lE
+
+Go to https://github.com/CongducPham/tutorials for all tutorials and particularly look for: 
+
+Low-cost-LoRa-IoT-step-by-step tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-GW-step-by-step.pdf
+Low-cost-LoRa-GW-step-by-step tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-step-by-step.pdf
+Low-cost-LoRa-IoT-antennaCable tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-antennaCable.pdf 
+Look also at our FAQ!  , https://github.com/CongducPham/tutorials/blob/master/FAQ.pdf
+
+See also Congduc Pham's website: http://cpham.perso.univ-pau.fr/LORA/RPIgateway.html.
+
+
+
+## Building your own LoRa nodes
+
+Now that you have your LoRa-Internet gateway ready, you probably want to build some wireless nodes to send you data. There are many options out there to get you started quickly. Our favourites are:
+
+Moteino https://lowpowerlab.com/guide/moteino/
+Modtronix http://modtronix.com/inair9.html
+
