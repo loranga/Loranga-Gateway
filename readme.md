@@ -2,12 +2,12 @@
 
 Loranga is a Raspberry Pi compatible board designed to make it easier to set up an internet connected LoRa IoT network anywhere a cell phone signal is available. The LoRa Technology enables long range, low power and low cost communication between devices.
 
-All Raspberry Pi boards with a 40-pin header works great with Loranga. With a formfactor of the RPI0 complexity is kept at a minimum in order to keep the BOM short and cost as low as possible while maintaining flexibility. 
+All Raspberry Pi boards with a 40-pin header works great with Loranga. With a formfactor of the RPI0 complexity is kept at a minimum in order to keep the BOM short and cost as low as possible while maintaining flexibility.
 
 ## Functional diagram
 
 Loranga combines the power of the widely deployed 2G cellular network with the great LoRa network features.
-Our first edition is equiped with the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G module. However, other alternatives are available to work with your region's license free frequency bands (typically 433MHz and 850MHz-1GHz). 
+Our first edition is equiped with the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G module. However, other alternatives are available to work with your region's license free frequency bands (typically 433MHz and 850MHz-1GHz).
 
 ![Image of loranga](https://github.com/loranga/Loranga-Gateway/blob/Readme-edit/Docs/Photos/PARTES%2BTECNICAS%2BLORANGA-01.png)
 
@@ -66,13 +66,13 @@ Loranga uses the UART pins on the RPi GPIO to interface with the 2G modem. Follo
     - `sudo systemctl stop serial-getty@ttyS0.service`
     - `sudo systemctl disable serial-getty@ttyS0.service`
 
-  3. Remove the console from the cmdline.txt: 
+  3. Remove the console from the cmdline.txt:
     - `sudo nano /boot/cmdline.txt`
       ```
       dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
       ```
       , remove the line: `console=serial0,115200` and save.
-      
+
   4. Enable UART by editing the /boot/config.txt file
     - `sudo nano /boot/config.txt` and add `enable_uart=1` to the bottom of file. Then save and reboot for changes to take effect.
 
@@ -97,22 +97,22 @@ Loranga uses the UART pins on the RPi GPIO to interface with the 2G modem. Follo
 
 ## LoRa Module Set-up
 
-We at La Fabrica Alegre recommend setting up your gateway with the LowCostLoRaGateway https://github.com/CongducPham/LowCostLoRaGw. 
+We at La Fabrica Alegre recommend setting up your gateway with the LowCostLoRaGateway https://github.com/CongducPham/LowCostLoRaGw.
 This gateway software is plug-and-play with Loranga and extremely well documented. It is therefor recommended to dig into the tutorial material and FAQ to learn about all the possibilities. You can also simply download a complete Raspbian image with the gateway sotware already installed: http://cpham.perso.univ-pau.fr/LORA/WAZIUP/raspberrypi-jessie-WAZIUP-demo.dmg.zip
 
 LowCostLoRaGateway Tutorial materials by Congduc Pham:
 
 2 tutorial videos on YouTube: video of all the steps to build the whole framework from scratch:
 
-Build your low-cost, long-range IoT device with WAZIUP  , https://www.youtube.com/watch?v=YsKbJeeav_M
-Build your low-cost LoRa gateway with WAZIUP, https://www.youtube.com/watch?v=peHkDhiH3lE
+- Build your low-cost, long-range IoT device with WAZIUP  , https://www.youtube.com/watch?v=YsKbJeeav_M
+- Build your low-cost LoRa gateway with WAZIUP, https://www.youtube.com/watch?v=peHkDhiH3lE
 
-Go to https://github.com/CongducPham/tutorials for all tutorials and particularly look for: 
+Go to https://github.com/CongducPham/tutorials for all tutorials and particularly look for:
 
-Low-cost-LoRa-IoT-step-by-step tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-GW-step-by-step.pdf
-Low-cost-LoRa-GW-step-by-step tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-step-by-step.pdf
-Low-cost-LoRa-IoT-antennaCable tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-antennaCable.pdf 
-Look also at our FAQ!  , https://github.com/CongducPham/tutorials/blob/master/FAQ.pdf
+- Low-cost-LoRa-IoT-step-by-step tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-GW-step-by-step.pdf
+- Low-cost-LoRa-GW-step-by-step tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-step-by-step.pdf
+- Low-cost-LoRa-IoT-antennaCable tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-antennaCable.pdf
+- Look also at our FAQ!  , https://github.com/CongducPham/tutorials/blob/master/FAQ.pdf
 
 See also Congduc Pham's website: http://cpham.perso.univ-pau.fr/LORA/RPIgateway.html.
 
@@ -124,4 +124,3 @@ Now that you have your LoRa-Internet gateway ready, you probably want to build s
 
 Moteino https://lowpowerlab.com/guide/moteino/
 Modtronix http://modtronix.com/inair9.html
-
