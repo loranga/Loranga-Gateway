@@ -97,7 +97,7 @@ Loranga uses the UART pins on the RPi GPIO to interface with the 2G modem. Follo
 
 ## LoRa Module Set-up
 
-We at La Fabrica Alegre recommend setting up your gateway with the LowCostLoRaGateway https://github.com/CongducPham/LowCostLoRaGw.
+We at La Fabrica Alegre recommend setting up your gateway with the [LowCostLoRaGateway](https://github.com/CongducPham/LowCostLoRaGw)
 This gateway software is plug-and-play with Loranga and extremely well documented. It is therefor recommended to dig into the tutorial material and FAQ to learn about all the possibilities. You can also simply download a complete Raspbian image with the gateway sotware already installed: http://cpham.perso.univ-pau.fr/LORA/WAZIUP/raspberrypi-jessie-WAZIUP-demo.dmg.zip
 
 LowCostLoRaGateway Tutorial materials by Congduc Pham:
