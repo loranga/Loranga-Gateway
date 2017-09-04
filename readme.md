@@ -105,14 +105,15 @@ LowCostLoRaGateway Tutorial materials by Congduc Pham:
 2 tutorial videos on YouTube: video of all the steps to build the whole framework from scratch:
 
 - [Build your low-cost, long-range IoT device with WAZIUP](https://www.youtube.com/watch?v=YsKbJeeav_M)
-- Build your low-cost LoRa gateway with WAZIUP, https://www.youtube.com/watch?v=peHkDhiH3lE
+- [Build your low-cost LoRa gateway with WAZIUP](https://www.youtube.com/watch?v=peHkDhiH3lE)
 
-Go to https://github.com/CongducPham/tutorials for all tutorials and particularly look for:
+Go to [https://github.com/CongducPham/tutorials](https://github.com/CongducPham/tutorials) for all tutorials and particularly look for:
 
-- Low-cost-LoRa-IoT-step-by-step tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-GW-step-by-step.pdf
-- Low-cost-LoRa-GW-step-by-step tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-step-by-step.pdf
-- Low-cost-LoRa-IoT-antennaCable tutorial , https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-antennaCable.pdf
-- Look also at our FAQ!  , https://github.com/CongducPham/tutorials/blob/master/FAQ.pdf
+- [Low-cost-LoRa-IoT-step-by-step tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-GW-step-by-step.pdf)
+- [Low-cost-LoRa-GW-step-by-step tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-step-by-step.pdf)
+- [Low-cost-LoRa-IoT-antennaCable tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-antennaCable.pdf)
+
+Look also at our [FAQ](https://github.com/CongducPham/tutorials/blob/master/FAQ.pdf)!
 
 See also Congduc Pham's website: http://cpham.perso.univ-pau.fr/LORA/RPIgateway.html.
 
