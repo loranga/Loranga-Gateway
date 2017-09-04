@@ -123,5 +123,5 @@ See also Congduc Pham's website: http://cpham.perso.univ-pau.fr/LORA/RPIgateway.
 
 Now that you have your LoRa-Internet gateway ready, you probably want to build some wireless nodes to send you data. There are many options out there to get you started quickly. Our favourites are:
 
-Moteino https://lowpowerlab.com/guide/moteino/
-Modtronix http://modtronix.com/inair9.html
+- [Moteino](https://lowpowerlab.com/guide/moteino/)
+- [Modtronix](http://modtronix.com/inair9.html)
