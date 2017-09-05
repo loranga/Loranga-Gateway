@@ -113,9 +113,7 @@ Go to [https://github.com/CongducPham/tutorials](https://github.com/CongducPham/
 - [Low-cost-LoRa-GW-step-by-step tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-step-by-step.pdf)
 - [Low-cost-LoRa-IoT-antennaCable tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-antennaCable.pdf)
 
-Look also at our [FAQ](https://github.com/CongducPham/tutorials/blob/master/FAQ.pdf)!
-
-See also Congduc Pham's website: http://cpham.perso.univ-pau.fr/LORA/RPIgateway.html.
+See also Congduc Pham's gateway [FAQ](https://github.com/CongducPham/tutorials/blob/master/FAQ.pdf) and [website](http://cpham.perso.univ-pau.fr/LORA/RPIgateway.html).
 
 
 
