@@ -44,7 +44,7 @@ The pin used for this is GPIO 22 (physical pin 15).
 You need to send a high level for 2 seconds over GPIO 22 to wake it up (same procedure to sleep it)
 
 1. Download the wake-2G python script
-- `wget https://raw.githubusercontent.com/edu986/test_ppp/edit_readme/wake-2G.py`
+- `wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Software/wake_2G.py`
 
 2. Call the script in order to wake-up the 2G module
 - `sudo python wake-2G.py`
@@ -77,7 +77,7 @@ Loranga uses the UART pins on the RPi GPIO to interface with the 2G modem. Follo
     - `sudo nano /boot/config.txt` and add `enable_uart=1` to the bottom of file. Then save and reboot for changes to take effect.
 
 3. Download ppp-creator.sh script and run. This script will install ppp and create the ppp config files.
-  - `wget https://raw.githubusercontent.com/edu986/test_ppp/master/ppp-creator.sh`
+  - `wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Software/ppp-creator.sh`
   - `chmod +x ppp-creator.sh`
   - `sudo ./ppp-creator.sh INTERNET ttyAMA0` # RPi3 needs ttyS0 instead of ttyAMA0 # Replace INTERNET with your cellular network provider's APN (example: web.entelpcs.cl).
 
