@@ -9,7 +9,7 @@ All Raspberry Pi boards with a 40-pin header works great with Loranga. With a fo
 Loranga combines the power of the widely deployed 2G cellular network with the great LoRa network features.
 Our first edition is equiped with the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G module. However, other alternatives are available to work with your region's license free frequency bands (typically 433MHz and 850MHz-1GHz).
 
-![Image of loranga](https://github.com/loranga/Loranga-Gateway/blob/Readme-edit/Docs/Photos/PARTES%2BTECNICAS%2BLORANGA-01.png)
+![Image of loranga](https://github.com/loranga/Loranga-Gateway/blob/master/Docs/Photos/PARTES%2BTECNICAS%2BLORANGA-01.png)
 
 
 ## Features
