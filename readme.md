@@ -7,9 +7,9 @@ All Raspberry Pi boards with a 40-pin header works great with Loranga. With a fo
 ## Functional diagram
 
 Loranga combines the power of the widely deployed 2G cellular network with the great LoRa network features.
-Our first edition is equiped with the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G module. Make sure you order a Loranga with your region's license free frequency bands (typically 433MHz and 850MHz-1GHz).
+Our first edition is equiped with the HopeRF RF95W LoRa Transceiver and a SIMCom SIM800L 2G module. However, other alternatives are available to work with your region's license free frequency bands (typically 433MHz and 850MHz-1GHz).
 
-![Image of loranga](https://github.com/loranga/Loranga-Gateway/blob/Readme-edit/Docs/Photos/PARTES%2BTECNICAS%2BLORANGA-01.png)
+![Image of loranga](https://github.com/loranga/Loranga-Gateway/blob/master/Docs/Photos/PARTES%2BTECNICAS%2BLORANGA-01.png)
 
 
 ## Features
@@ -23,12 +23,9 @@ Our first edition is equiped with the HopeRF RF95W LoRa Transceiver and a SIMCom
 - Loranga has two built-in status LEDs for the 2G module and one connected to a GPIO pin for customizable implementation.
 
 
-# Setup
+# How to use
 
-
-## Physical setup
-
-In order to use Loranga with your Rasperry Pi you need to:
+In order to use Loranga with your Rasperry Pi, you need to set up the 2G module and the LoRa Transceiver.
 
 1. Insert a nano SIM card in the SIM holder on the backside of the Loranga board.
 
@@ -37,63 +34,9 @@ In order to use Loranga with your Rasperry Pi you need to:
 3. Plug a 5V, 2A power adapter to the micro USB conector on Loranga (You don't need to connect your regular Pi power).
 
 
-## How to use with the WAZIUP gateway software.
+## 2G module set-up
 
-We at La Fabrica Alegre recommend setting up your gateway with the [LowCostLoRaGateway](https://github.com/CongducPham/LowCostLoRaGw)
-This gateway software is plug-and-play with Loranga and extremely well documented. It is therefor recommended to dig into the tutorial material and FAQ to learn about all the possibilities. 
-
-You can also simply download a complete Raspbian image with the gateway sotware already installed.
-
-
-### Setting up Loranga with prebuilt gateway SD-card image
-
-SD-card image available here: http://cpham.perso.univ-pau.fr/LORA/WAZIUP/raspberrypi-jessie-WAZIUP-demo.dmg.zip
-
-The image works out-of-the-box for RPI3 and RPI0W enabling an AP using the onboard wifi. 
-
-1. Boot up the Pi with Loranga installed on top.
-
-2. Select the advertised wifi AP and connect with ssh pi@192.168.200.1 (password is loragateway).
-
-3. cd to /home/pi/lora_gateway
-
-4. If using HopeRF RF95W, edit  (what path !!) radio.makefile and uncomment the PABOOST option. (link here to PABOOST explanation on congduc github)
-
-5. Run ./scripts/basic_config_gw.sh  (The script also recompiles the gateway software. You can reboot and you will see that the advertised wifi name has now changed and the gateway id has been set)
-
-6. Run (is path correct ??) ./scripts/start_internet.sh   (3GDongle/loranga) to connect the gw to the internet using the 2G modem on Loranga.
-
-7. To access the web admin interface open a browser on your Pi and go to the local webpage 192.168.200.1/admin, login: 'admin', password: 'loragateway'.
-
-8. Once the gw has internet you can select the gateway update menu on the left and then you can select the "Full update" option and click on the download icon to update with the latest version from github.
-
-
-
-### Setting up Loranga and manually build the gateway software
-
-Setting up manually is slightly more involved but serves as a great start to underastand the functionality of the gateway. The tutorial material is provided by Congduc Pham and the WAZIUP team.
-
-Two tutorial videos on YouTube describing all the steps to build the whole framework from scratch:
-
-- [Build your low-cost, long-range IoT device with WAZIUP](https://www.youtube.com/watch?v=YsKbJeeav_M)
-- [Build your low-cost LoRa gateway with WAZIUP](https://www.youtube.com/watch?v=peHkDhiH3lE)
-
-Go to [https://github.com/CongducPham/tutorials](https://github.com/CongducPham/tutorials) for all tutorials and particularly look for:
-
-- [Low-cost-LoRa-IoT-step-by-step tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-GW-step-by-step.pdf)
-- [Low-cost-LoRa-GW-step-by-step tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-step-by-step.pdf)
-- [Low-cost-LoRa-IoT-antennaCable tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-antennaCable.pdf)
-
-See also Congduc Pham's gateway [FAQ](https://github.com/CongducPham/tutorials/blob/master/FAQ.pdf) and [website](http://cpham.perso.univ-pau.fr/LORA/RPIgateway.html).
-
-
-
-
-### Manually setting up the 2G module
-
-If you plan to use Loranga for other purposes you can setup the hardware as described below.
-
-#### A. Start the 2G module on your Loranga board
+### A. Start the 2G module on your Loranga board
 The 2G module on Loranga needs a wake-up signal from the RPi.
 
 The pin used for this is GPIO 22 (physical pin 15).
@@ -109,7 +52,7 @@ You need to send a high level for 2 seconds over GPIO 22 to wake it up (same pro
 3. This script can be added later on /etc/rc.local to auto wake-up at boot.
 
 
-#### B. Set up the ppp connection
+### B. Set up the ppp connection
 Loranga uses the UART pins on the RPi GPIO to interface with the 2G modem. Follow the instructions below to connect to the cellular network of your choice.
 
 1. Firstly, connect your Raspberry Pi to the internet using wifi or ethernet and run `sudo apt-get update` to update your Raspberry Pi
@@ -154,11 +97,27 @@ Loranga uses the UART pins on the RPi GPIO to interface with the 2G modem. Follo
 
 ## LoRa Module Set-up
 
-The easiest way to run the RPi and the HopeRF LoRa module on the Loranga board is to only run the basic gateway from the gateway project above. From there you can start experimenting with the drivers
-HopeRF RFM95W SX1276 compatible drivers are available from RadioHead and Libelium as well as in the gateway package described above.
-Semtech 
+We at La Fabrica Alegre recommend setting up your gateway with the [LowCostLoRaGateway](https://github.com/CongducPham/LowCostLoRaGw)
+This gateway software is plug-and-play with Loranga and extremely well documented. It is therefor recommended to dig into the tutorial material and FAQ to learn about all the possibilities. You can also simply download a complete Raspbian image with the gateway sotware already installed: http://cpham.perso.univ-pau.fr/LORA/WAZIUP/raspberrypi-jessie-WAZIUP-demo.dmg.zip
 
-[RadioHead](http://www.airspayce.com/mikem/arduino/RadioHead/classRH__RF95.html) :
+LowCostLoRaGateway Tutorial materials by Congduc Pham:
+
+2 tutorial videos on YouTube: video of all the steps to build the whole framework from scratch:
+
+- [Build your low-cost, long-range IoT device with WAZIUP](https://www.youtube.com/watch?v=YsKbJeeav_M)
+- [Build your low-cost LoRa gateway with WAZIUP](https://www.youtube.com/watch?v=peHkDhiH3lE)
+
+Go to [https://github.com/CongducPham/tutorials](https://github.com/CongducPham/tutorials) for all tutorials and particularly look for:
+
+- [Low-cost-LoRa-IoT-step-by-step tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-GW-step-by-step.pdf)
+- [Low-cost-LoRa-GW-step-by-step tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-step-by-step.pdf)
+- [Low-cost-LoRa-IoT-antennaCable tutorial](https://github.com/CongducPham/tutorials/blob/master/Low-cost-LoRa-IoT-antennaCable.pdf)
+
+Look also at our [FAQ](https://github.com/CongducPham/tutorials/blob/master/FAQ.pdf)!
+
+See also Congduc Pham's website: http://cpham.perso.univ-pau.fr/LORA/RPIgateway.html.
+
+
 
 ## Building your own LoRa nodes
 
