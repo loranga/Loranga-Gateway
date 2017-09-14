@@ -13,6 +13,7 @@ In order to use, you need to connect your Arduino as the picture below
 ![Image of arduino](https://github.com/loranga/Loranga-Gateway/blob/master/Docs/Photos/nano_lora_gsm.png)
 
 Function | Arduino Nano | Loranga
+-------- | ------------ | -------
 SPI_SS | 10 | 24
 SPI_MOSI |
 SPI_MISO |
