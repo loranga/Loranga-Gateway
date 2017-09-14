@@ -15,6 +15,6 @@ In order to use, you need to connect your Arduino as the picture below
 Function | Arduino Nano | Loranga
 -------- | ------------ | -------
 SPI_SS | 10 | 24
-SPI_MOSI |
-SPI_MISO |
-SPI_CLK
+SPI_MOSI | 11 | 19
+SPI_MISO | 12  | 21
+SPI_CLK  | 13  | 23
