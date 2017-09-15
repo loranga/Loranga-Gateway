@@ -8,7 +8,10 @@ The 2G module and the LoRa transceiver works on 3.3V communication only.
 
 In this case we are using an Arduino nano with AtMega328p
 
-In order to use, you need to connect your Arduino as the picture below
+To use Loranga with your microcontroller, you need to connect the LoRa transceiver via SPI, and the 2G module with Serial.
+In this example, as the Arduino nano has only one serial (for USB communication), you need to use Software Serial.
+
+On the next image you can see how to connect to have the 2 modules working.
 
 ![Image of arduino](https://github.com/loranga/Loranga-Gateway/blob/master/Docs/Photos/nano_lora_gsm.png)
 
