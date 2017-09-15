@@ -17,7 +17,7 @@ This high pulse must be at least 2 seconds long.
 
 On the next image you can see how to connect to have the 2 modules working.
 
-![Image of arduino](https://github.com/loranga/Loranga-Gateway/blob/master/Docs/Photos/nano_lora_gsm.png)
+![Image of arduino](https://github.com/loranga/Loranga-Gateway/blob/master/Docs/Photos/nano_lora_gsm1.png)
 
 On the next table, you can see the connections for LoRa transceiver (SPI Protocol)
 
