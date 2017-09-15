@@ -11,6 +11,10 @@ In this case we are using an Arduino nano with AtMega328p
 To use Loranga with your microcontroller, you need to connect the LoRa transceiver via SPI, and the 2G module with Serial.
 In this example, as the Arduino nano has only one serial (for USB communication), you need to use Software Serial.
 
+Before start communication with 2G module, you need to wake it up.
+To wake up or sleep the 2G module, a high pulse on pin 15 of Loranga is needed.
+This high pulse must be at least 2 seconds long.
+
 On the next image you can see how to connect to have the 2 modules working.
 
 ![Image of arduino](https://github.com/loranga/Loranga-Gateway/blob/master/Docs/Photos/nano_lora_gsm.png)
@@ -28,5 +32,11 @@ And for the 2G module (Serial communication)
 
 Function | Arduino Nano | Loranga
 -------- | ------------ | -------
-GSM_TX | 5 (Software Serial) | 8
-GSM_RX | 6 (Software Serial) | 6
+GSM_TX | 5 (Software Serial TX) | 8
+GSM_RX | 6 (Software Serial RX) | 6
+
+And the connection needed to wake up the 2G module
+
+Function | Arduino Nano | Loranga
+-------- | ------------ | -------
+Wake up | 4 | 15
