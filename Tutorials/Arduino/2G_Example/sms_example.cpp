@@ -26,11 +26,11 @@
 #include <TinyGsmClientSIM800.h>
 
 
-#define TINY_GSM_MODEM_SIM800           // Define the tipe of 2G module you are using
+#define TINY_GSM_MODEM_SIM800           // Loranga uses SIM800L module
 
 SoftwareSerial SerialAT(5, 6);          // Software Serial to comunicate with 2G module
                                         // pin 5 of arduino is RX, pin 6 is TX
-TinyGsm modem(SerialAT);                // Start the TinyGsm lib on SoftwareSerial 
+TinyGsm modem(SerialAT);                // Start the TinyGsm lib on SoftwareSerial
 
 
 void setup() {
