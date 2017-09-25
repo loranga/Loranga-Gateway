@@ -2,9 +2,21 @@
 
 If your don't have a Raspberry pi, you can use Loranga with an Arduino or any other microcontroller
 
-Here you can find different examples to use Loranga with Arduino
 
-The 2G module and the LoRa transceiver works on 3.3V communication only.
+# Examples
+
+This folder contains sketches for Arduino (and compatible) boards.
+
+**Arduino_LoRa_Ping_Pong** shows a simple ping-pong communication between a LoRa device and a gateway by requesting an acknowlegment for data messages sent to the gateway.
+
+
+**sms_example** shows a simple example sending a SMS to a number. It uses TinyGsm Library
+
+
+# Hardware
+
+
+**The 2G module and the LoRa transceiver works on 3.3V communication only.**
 
 In this case we are using an Arduino nano with AtMega328p
 
