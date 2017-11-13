@@ -101,7 +101,7 @@ The pin used for this is GPIO 22 (physical pin 15).
 You need to send a high level for 2 seconds over GPIO 22 to wake it up (same procedure to sleep it)
 
 1. Download the wake-2G python script
-- `wget https://raw.githubusercontent.com/edu986/test_ppp/edit_readme/wake-2G.py`
+- `wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Software/wake_2G.py`
 
 2. Call the script in order to wake-up the 2G module
 - `sudo python wake-2G.py`
