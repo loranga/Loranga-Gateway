@@ -39,7 +39,8 @@
 	- Reboot
   - Quit with Q
 - Go to Loranga folder `cd 3GDongle/loranga`
-  - Download test files
+  - Download test files.
+  - Run:
   ```
   wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Tutorials/LorangaTest/serialtest.py
   wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Tutorials/LorangaTest/lorangatest.sh
