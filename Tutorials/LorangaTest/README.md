@@ -28,3 +28,9 @@
         }
     ```
   - Reboot     
+  - Modify lora_gateway.cpp file to change frequency and enable PABOOST
+      `sudo nano lora_gateway.cpp`
+    - Get down until you find "ifdef ARDUINO"
+    - Uncomment line //define PABOOST
+    - A few lines under uncomment the BAND900 and comment the BAND868
+    - Exit and save with CRTL+X and Y
