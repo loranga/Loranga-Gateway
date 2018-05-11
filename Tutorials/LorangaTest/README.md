@@ -40,8 +40,11 @@
   - Quit with Q
 - Go to Loranga folder `cd 3GDongle/loranga`
   - Download test files
-    - `wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Tutorials/LorangaTest/serialtest.py`
-    - `wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Tutorials/LorangaTest/lorangatest.sh`
+  ```
+  wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Tutorials/LorangaTest/serialtest.py
+  wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Tutorials/LorangaTest/lorangatest.sh
+
+  ```  
   - Make the test file executable
     - `chmod +x lorangatest.sh`
 - Run test
