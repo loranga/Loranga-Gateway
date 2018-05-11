@@ -5,3 +5,4 @@
 - Boot with keyboard and screen
 - CTRL+ALT+T open terminal
 - Enter option K -> Kill all GW related process
+asdasd
