@@ -8,7 +8,7 @@
   - Enter option K -> Kill all GW related process
   - Enter option Q -> Quit
 
-- Enter `sudo raspi-config`
+- Run `sudo raspi-config`
   - Change keyboard lyout (default French)
   - Enable SSH
     - Select Interfacing Options
@@ -17,7 +17,7 @@
 		- Select Ok
 		- Choose Finish
 - Disable Access Point
-  - Enter `./scripts/stop_access_point.sh`
+  - Run `./scripts/stop_access_point.sh`
 - Configure wifi:
   - Open the wpa-supplicant configuration file in nano:
     `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
@@ -29,8 +29,21 @@
     ```
   - Reboot     
 - Modify lora_gateway.cpp file to change frequency and enable PABOOST
-      `sudo nano lora_gateway.cpp`
+  - `sudo nano lora_gateway.cpp`
   - Get down until you find "ifdef ARDUINO"
   - Uncomment line //define PABOOST
   - A few lines under uncomment the BAND900 and comment the BAND868
   - Exit and save with CRTL+X and Y
+- Compile the GW code
+	- `sudo ./scripts/basic_config_gw.sh`
+	- Reboot
+  - Quit with Q
+- Go to Loranga folder `cd 3GDongle/loranga`
+  - Download test files
+    - `wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Tutorials/LorangaTest/serialtest.py`
+    - `wget https://raw.githubusercontent.com/loranga/Loranga-Gateway/master/Tutorials/LorangaTest/lorangatest.sh`
+  - Make the test file executable
+    - `chmod +x lorangatest.sh`
+- Run test
+  - (In the /3GDongle/loranga folder)
+  - Run `./lorangatest.sh`
