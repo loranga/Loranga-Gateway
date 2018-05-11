@@ -8,7 +8,7 @@
   - Enter option K -> Kill all GW related process
   - Enter option Q -> Quit
 
-- Enter 'sudo raspi-config'
+- Enter `sudo raspi-config`
   - Change keyboard lyout (default French)
   - Enable SSH
     - Select Interfacing Options
@@ -17,5 +17,14 @@
 		- Select Ok
 		- Choose Finish
 - Disable Access Point
-  - Enter './scripts/stop_access_point.sh'
-- Configure wifi
+  - Enter `./scripts/stop_access_point.sh`
+- Configure wifi:
+  - Open the wpa-supplicant configuration file in nano:
+    `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
+  - Go to the bottom of the file and add the following:
+    ``` network={
+        ssid="YOUR wifi SSID"
+        psk="YOUR password"
+        }
+    ```
+  - Reboot     
